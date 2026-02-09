@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas API - Ejemplos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 0;
+        }
+        .container-cards {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .canvas-container {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-cards">
+        <h1>🎨 Ejemplos de Canvas API</h1>
+        
+        <div class="row g-4">
+            <!-- Card 1: Rectángulo Verde -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Rectángulo Relleno</h5>
+                        <p class="card-text text-muted">Rectángulo verde relleno básico</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas1" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Rectángulos Combinados -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Rectángulos Combinados</h5>
+                        <p class="card-text text-muted">fillRect, clearRect y strokeRect</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas2" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Rectángulo con Sombra -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Rectángulo con Sombra</h5>
+                        <p class="card-text text-muted">Shadow effect con trazo azul</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas3" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Triángulo Simple -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Triángulo Simple</h5>
+                        <p class="card-text text-muted">Triángulo relleno con pathsvg</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas4" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Triángulos Mixtos -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Triángulos Mixtos</h5>
+                        <p class="card-text text-muted">Relleno y contorneado</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas5" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Cara Sonriente -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cara Sonriente</h5>
+                        <p class="card-text text-muted">Arcos para crear una cara feliz</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas6" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: Arcos en Grid -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Arcos en Grid</h5>
+                        <p class="card-text text-muted">Múltiples arcos en matriz</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas7" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: Curva Cuadrática -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Curva Cuadrática</h5>
+                        <p class="card-text text-muted">Forma orgánica con curvas suaves</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas8" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9: Curva Cúbica (Bezier) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Curva Cúbica (Bezier)</h5>
+                        <p class="card-text text-muted">Forma de corazón con Bezier</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas9" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10: Robot -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Robot</h5>
+                        <p class="card-text text-muted">Figura compleja de robot amigable</p>
+                        <div class="canvas-container">
+                            <canvas id="canvas10" width="200" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
