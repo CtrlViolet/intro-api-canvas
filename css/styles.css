@@ -1,0 +1,44 @@
+    body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 0;
+        }
+        .container-cards {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .canvas-container {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
